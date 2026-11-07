@@ -74,7 +74,7 @@
        <h2 id="month-title" class="display text-3xl font-semibold capitalize sm:text-5xl" aria-live="polite"></h2>
       </div>
       <div class="flex items-center gap-2">
-       <button id="previous-month" type="button" aria-label="Mês anterior" class="flex h-11 w-11 items-center justify-center rounded-full border border-[#dce3d9] transition hover:bg-[#edf3eb]"><i data-lucide="chevron-left" class="h-5 w-5"></i></button> <button id="next-month" type="button" aria-label="Próximo mês" class="flex h-11 w-11 items-center justify-center rounded-full border border-[#d5eff0] transition hover:bg-[#d5eff0]"><i data-lucide="chevron-right" class="h-5 w-5"></i></button> <button id="reset-month" data-template-id="reset-button" type="button" class="canva-button ml-1 rounded-full px-4 py-3 font-semibold transition hover:opacity-85" style="background: rgb(212, 200, 74); color: rgb(212, 200, 74); font-weight: 600; font-style: normal; font-size: 13px;">Voltar a janeiro</button>
+       <button id="previous-month" type="button" aria-label="Mês anterior" class="flex h-11 w-11 items-center justify-center rounded-full border border-[#dce3d9] transition hover:bg-[#edf3eb]"><i data-lucide="chevron-left" class="h-5 w-5"></i></button> <button id="next-month" type="button" aria-label="Próximo mês" class="flex h-11 w-11 items-center justify-center rounded-full border border-[#d5eff0] transition hover:bg-[#d5eff0]"><i data-lucide="chevron-right" class="h-5 w-5"></i></button>
       </div>
      </div>
      <div class="calendar-grid mb-2 text-center">
@@ -137,7 +137,8 @@
       '2027-11-02':'Finados',
       '2027-11-15':'Proclamação da República',
       '2027-11-20':'Dia da Consciência Negra',
-      '2027-12-25':'Natal'
+      '2027-12-25':'Natal',
+      '2027-12-31':'Véspera de Ano-Novo'
     };
     let month = 0;
     let selected = { month:0, day:1 };
@@ -220,7 +221,6 @@
     }
     document.getElementById('previous-month').addEventListener('click',() => { if(month > 0) changeMonth(month - 1); });
     document.getElementById('next-month').addEventListener('click',() => { if(month < 11) changeMonth(month + 1); });
-    document.getElementById('reset-month').addEventListener('click',() => changeMonth(0));
     document.getElementById('appointment-form').addEventListener('submit', async (event) => {
       event.preventDefault();
       const value = appointmentInput.value.trim();
